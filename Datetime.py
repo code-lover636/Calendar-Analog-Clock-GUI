@@ -3,11 +3,12 @@ import turtle
 from time import strftime
 from tkcalendar import Calendar
 
-# Setting window
+# Setting up window
 root = Tk()
 root.config(bg="black")
 root.title("My Clock")
-root.iconbitmap("assets\icon.ico")
+root.iconbitmap("assets/icon.ico")
+
 
 def time_now(hands):
     Time = strftime("%I %M %S")
@@ -60,8 +61,7 @@ def show_time():
 def cal():
     cal_win = Toplevel(root, bg="black", cursor="dotbox")
     cal_win.title("My Calendar")
-    calendar = Calendar(cal_win, selectmode='day', year=int(strftime("%Y")), month=int(strftime("%m")) , day=int(strftime("%d")),\
-                        bg='black', fg='white')
+    calendar = Calendar(cal_win, selectmode='day', year=int(strftime("%Y")), month=int(strftime("%m")) , day=int(strftime("%d")), bg='black', fg='white')
     calendar.pack()
 
 # Widgets
@@ -74,6 +74,7 @@ analog_canvas.grid(row=0, column=0, columnspan=2)
 digital_time.grid(row=1, column=0, columnspan=2)
 digital_date.grid(row=2, column=1, sticky="nw")
 calendar_but.grid(row=2, column=0)
+
 # Turtle screen
 screen = turtle.TurtleScreen(analog_canvas)
 screen.bgpic("assets\clock.png")
